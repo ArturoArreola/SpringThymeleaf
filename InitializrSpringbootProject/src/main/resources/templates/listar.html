@@ -19,7 +19,7 @@
         
         <div class="container">
             <h1 class="text-secondary border border-success border-top-0 border-left-0 border-right-0" th:text="${titulo}"></h1>
-            <a th:href="@{/form}">Crear cliente</a>  
+            <p><a class="btn btn-success btn-xs" th:href="@{/form}">Crear cliente</a></p>
             <table class="table table-stripped table-bordered">
                 <thead class="thead-inverse">
                     <tr>
@@ -28,6 +28,8 @@
                         <th>Apellido</th>
                         <th>Email</th>
                         <th>Fecha</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,11 +39,11 @@
                         <td th:text="${cliente.apellido}"></td>
                         <td th:text="${cliente.email}"></td>
                         <td th:text="${cliente.createAt}"></td>
+                        <td><a class="btn btn-primary btn-xs" th:href="@{/form/}+${cliente.id}">Editar</a></td>
+                        <td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/}+${cliente.id}">Eliminar</a></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        
-                   
+        </div> 
     </body>
 </html>

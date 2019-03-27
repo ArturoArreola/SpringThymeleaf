@@ -1,13 +1,8 @@
 package com.nuuptech.demo.models.dao;
 
 import com.nuuptech.demo.models.entity.Cliente;
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
 
-public interface IClienteDao {
+public interface IClienteDao extends CrudRepository<Cliente, Long>{
     
-    public List<Cliente> findAll();
-    
-    public void save (Cliente cliente);
-    
-            
 }
